@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Spider-Man Core Palette */
+    --spidey-red: 0 80% 50%;
+    --spidey-red-glow: 0 100% 65%;
+    --spidey-blue: 220 80% 35%;
+    --spidey-blue-glow: 215 100% 55%;
+    --spidey-dark: 230 30% 6%;
+    --spidey-darker: 230 35% 3%;
+
+    /* Mapped to shadcn Design Tokens */
+    --background: 230 30% 6%;
+    --foreground: 220 15% 90%;
+    --card: 230 25% 10%;
+    --card-foreground: 220 15% 90%;
+    --popover: 230 25% 10%;
+    --popover-foreground: 220 15% 90%;
+    --primary: 0 80% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 80% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 230 20% 15%;
+    --muted-foreground: 230 10% 55%;
+    --accent: 215 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 230 20% 18%;
+    --input: 230 20% 12%;
+    --ring: 0 80% 50%;
+    --radius: 0.75rem;
+  }
+  .theme {
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--spidey-darker));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--spidey-red) / 0.5);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--spidey-red) / 0.7);
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+
+  .glass-strong {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+
+  /* Glow Effects */
+  .glow-red {
+    box-shadow: 0 0 20px hsl(var(--spidey-red) / 0.3),
+                0 0 40px hsl(var(--spidey-red) / 0.1);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(var(--spidey-blue-glow) / 0.3),
+                0 0 40px hsl(var(--spidey-blue-glow) / 0.1);
+  }
+
+  .glow-red-strong {
+    box-shadow: 0 0 30px hsl(var(--spidey-red) / 0.5),
+                0 0 60px hsl(var(--spidey-red) / 0.2),
+                0 0 100px hsl(var(--spidey-red) / 0.1);
+  }
+
+  /* Text Glow */
+  .text-glow-red {
+    text-shadow: 0 0 20px hsl(var(--spidey-red) / 0.5),
+                 0 0 40px hsl(var(--spidey-red) / 0.2);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 20px hsl(var(--spidey-blue-glow) / 0.5),
+                 0 0 40px hsl(var(--spidey-blue-glow) / 0.2);
+  }
+
+  /* Gradient Text */
+  .gradient-text-spidey {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--spidey-red)),
+      hsl(var(--spidey-red-glow)),
+      hsl(var(--spidey-blue-glow))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Card Gradients */
+  .gradient-card {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card)),
+      hsl(var(--spidey-darker))
+    );
+  }
+
+  .gradient-hero-bg {
+    background: radial-gradient(
+      ellipse at 30% 50%,
+      hsl(var(--spidey-red) / 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 70% 30%,
+      hsl(var(--spidey-blue) / 0.06) 0%,
+      transparent 50%
+    ),
+    hsl(var(--background));
+  }
+
+  /* Border Glow */
+  .border-glow-red {
+    border: 1px solid hsl(var(--spidey-red) / 0.3);
+    box-shadow: inset 0 0 20px hsl(var(--spidey-red) / 0.05),
+                0 0 20px hsl(var(--spidey-red) / 0.1);
+  }
+
+  /* Input Glow */
+  .input-glow:focus {
+    border-color: hsl(var(--spidey-red) / 0.6);
+    box-shadow: 0 0 0 3px hsl(var(--spidey-red) / 0.15),
+                0 0 20px hsl(var(--spidey-red) / 0.1);
+    outline: none;
+  }
+
+  /* Halftone Pattern (comic book effect) */
+  .halftone-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+      circle,
+      hsl(var(--spidey-red) / 0.03) 1px,
+      transparent 1px
+    );
+    background-size: 4px 4px;
+    pointer-events: none;
+  }
+
+  /* Web Pattern */
+  .web-pattern {
+    background-image:
+      radial-gradient(circle at center, transparent 30%, hsl(var(--border) / 0.1) 30.5%, transparent 31%),
+      radial-gradient(circle at center, transparent 50%, hsl(var(--border) / 0.08) 50.5%, transparent 51%),
+      radial-gradient(circle at center, transparent 70%, hsl(var(--border) / 0.05) 70.5%, transparent 71%);
+    background-size: 200px 200px;
+  }
+
+  /* Section divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--spidey-red) / 0.3),
+      hsl(var(--spidey-blue) / 0.3),
+      transparent
+    );
+  }
+
+  /* Shimmer button effect */
+  .shimmer-bg {
+    background-size: 200% 100%;
+    background-image: linear-gradient(
+      110deg,
+      transparent 25%,
+      hsl(var(--spidey-red-glow) / 0.1) 50%,
+      transparent 75%
+    );
+  }
+}
+
+@theme inline {
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+}
