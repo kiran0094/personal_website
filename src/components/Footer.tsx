@@ -1,9 +1,9 @@
 import { Github, Linkedin, Globe, Mail, Heart } from 'lucide-react'
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/', label: 'LinkedIn' },
-  { icon: Globe, href: '#', label: 'Portfolio' },
+  { icon: Github, href: 'https://github.com/kiran0094', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/kirank0904', label: 'LinkedIn' },
+  { icon: Globe, href: 'https://personal-website-pied-omega-50.vercel.app', label: 'Portfolio' },
   { icon: Mail, href: 'mailto:kummkiran@gmail.com', label: 'Email' },
 ]
 
