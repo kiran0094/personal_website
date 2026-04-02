@@ -74,7 +74,11 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-wrap gap-4 justify-center lg:justify-start"
           >
-            <Button variant="spidey" size="lg" onClick={() => window.open('#', '_blank')}>
+            <Button 
+              variant="spidey" 
+              size="lg" 
+              onClick={() => window.open('/images/resume.pdf', '_blank')}
+            >
               <Download className="mr-2 h-5 w-5" />
               Resume
             </Button>
