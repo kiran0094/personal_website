@@ -63,7 +63,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-lg md:text-xl text-muted-foreground max-w-xl mb-8 mx-auto lg:mx-0"
           >
-            Result-oriented Computer Science student with expertise in MERN stack
+            Result-oriented developer with expertise in MERN stack
             and AI/ML. Passionate about building scalable applications, optimizing
             backend systems, and creating impactful user experiences.
           </motion.p>

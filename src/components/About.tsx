@@ -44,10 +44,7 @@ export default function About() {
           <ScrollReveal direction="right">
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I am a Computer Science student with hands-on experience in
-                full-stack development and AI/ML. I specialize in building
-                scalable REST APIs, secure authentication systems, and modern
-                frontend applications using React and Next.js.
+                As a Full-Stack Developer specializing in AI/ML integration, I build robust digital products from the ground up. My expertise lies in designing scalable REST APIs, implementing secure authentication workflows, and crafting modern frontend interfaces with React and Next.js. I am actively looking for my next full-time engineering role to help teams scale their applications.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 I enjoy solving real-world problems through technology and
