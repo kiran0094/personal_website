@@ -16,7 +16,7 @@ function App() {
       <ParticleField />
       <Navbar />
 
-      <main className="relative z-10">
+      <main className="relative">
         <Hero />
         <div className="section-divider" />
         <About />
